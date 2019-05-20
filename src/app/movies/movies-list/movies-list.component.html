@@ -1,0 +1,30 @@
+<div >
+    <h3>Movie Name</h3>
+    <button (click) = "onClick()">Add a new movie</button>
+  <table *ngIf="movies">
+    <tr>
+      <th>Movie Title</th>
+      <th>Average Review</th>
+      <th>Future Action</th>
+
+    </tr>
+    <tr *ngFor="let item of movies" >
+      <td>{{ item.movieName }}</td>
+      <td>{{item.average |number : '1.2-2'}}</td>
+      <td>
+        <button [routerLink]="[item._id]">
+          <span>Read Reviews</span>
+        </button>
+        <button [routerLink]="[item._id, 'review']">
+          <span>Write Reviews</span>
+        </button>
+      </td>
+    </tr>
+  </table>
+  <div class="formDiv" *ngIf="openForm">
+    <app-movies-add (added)="onAdded($event)">
+
+    </app-movies-add>
+  </div>
+</div>
+

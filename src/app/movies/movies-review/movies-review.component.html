@@ -1,0 +1,54 @@
+<div class="container">
+    <h2>Submit a movie and your review</h2>
+    <form [formGroup]="reviewForm" (ngSubmit)="onSubmit(reviewForm.value)" >
+        <label for="reviewName"><h3>Your Name</h3></label>
+        <input type="text"
+          name="reviewName"
+          id="reviewName"
+          formControlName = "reviewName"
+          required
+        />
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert-non">
+          <div *ngIf="name.errors.required">
+            Name is required.
+          </div>
+          <div *ngIf="name.errors.minlength">
+            Name must be at least 3 characters long.
+          </div>
+        </div>
+        <label for="rating"><h3>Rating</h3></label>
+        <select name="rating" required formControlName = "rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <div *ngIf="rating.invalid && (rating.dirty || rating.touched)" class="alert-non">
+          <div *ngIf="rating.errors.required">
+            Rating is required.
+          </div>
+          <div *ngIf="rating.errors.min && rating.errors.max">
+            Rating must be between 1 and 5
+          </div>
+        </div>
+        <label for="content"><h3>Content</h3></label>
+        <textarea name="content" required minlength="5" formControlName = "content"></textarea>
+        <div *ngIf="content.invalid && (content.dirty || content.touched)" class="alert-non">
+          <div *ngIf="content.errors.required">
+            Content is required.
+          </div>
+          <div *ngIf="content.errors.minlength">
+            Content must be at least 3 characters long.
+          </div>
+        </div>
+        <div *ngIf="review">
+            <button type="submit">
+              <span>Add</span>
+            </button>
+            <button [routerLink]="['/movies']">
+              <span>Cancel</span>
+            </button>
+          </div>
+      </form>
+  </div>

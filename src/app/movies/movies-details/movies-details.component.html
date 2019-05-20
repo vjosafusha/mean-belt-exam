@@ -1,0 +1,19 @@
+<div>
+    <h3 *ngIf="movie">Reviews for {{movie.movieName}} </h3>
+    <button (click) = "onDelete(movie._id)">Delete Movie</button>
+  <table *ngIf="reviews">
+    <tr>
+      <th>Reviewer</th>
+      <th>Stars</th>
+      <th>Reviews</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let item of reviews">
+      <td>{{ item.reviewName }}</td>
+      <td>{{ item.rating }}</td>
+      <td>{{ item.content }}</td>
+      <td> <button (click) = "onDeleteReview(item._id)">Delete Review</button></td>
+    </tr>
+  </table>
+</div>
+

@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+.alert-non {
+  width: 80%;
+  color: #da3e3e;
+  padding: 4px;
+  margin: 5px auto;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input, select, textarea{
+  width: 80%;
+  padding: 8px 20px;
+  margin: 5px auto;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type='text']:focus {
+  border: 3px solid #555;
+}
+
+.container {
+  margin: 0px auto;
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  width: 50%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1.5px solid rgba(117, 117, 117, 0.459);
+  border-radius: 10px;
+}
+a:hover,
+a:active {
+  background-color: rgba(0, 0, 0, 0.651);
+  color: white;
+}
+button {
+  border-radius: 4px;
+  background-color: #da3e3e;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 11px;
+  padding: 5px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px auto;
+  margin-left: 20px;
+}
+

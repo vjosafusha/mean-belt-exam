@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'movies-app';
+  constructor(private readonly router: Router){}
+  title = 'Squishy Tomatoes';
+
+  handleClick() {
+    this.router.navigateByUrl('/movies');
+  }
 }
