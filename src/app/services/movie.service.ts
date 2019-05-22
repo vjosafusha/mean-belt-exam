@@ -9,7 +9,7 @@ import { Movie } from '../models';
 export class MovieService {
 
   constructor(private readonly http: HttpClient) { }
-  private readonly base = 'http://localhost:8000/movies';
+  private readonly base = '/movies';
 
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.base}/`);

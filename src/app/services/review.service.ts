@@ -10,7 +10,7 @@ export class ReviewService {
 
   constructor(private readonly http: HttpClient) { }
 
-  private readonly base = 'http://localhost:8000/movies';
+  private readonly base = '/movies';
 
   getReviewsByMovieId(movieId: string): Observable<Review[]> {
     return this.http.get<Review[]>(`${this.base}/${movieId}/reviews`);
